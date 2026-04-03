@@ -28,49 +28,70 @@ To write a Python program that uses multilevel inheritance to get and display a 
 ## Program
 
 class Person:
+
     def __init__(self, name):
+    
         self.name = name
 
     def getName(self):
+    
         return self.name
 
 class Child(Person):
+
     def __init__(self, name, age):
+    
         super().__init__(name)
+        
         self.age = age
 
     def getAge(self):
+    
         return self.age
 
 
 class Grandchild(Child):
+
     def __init__(self, name, age, location):
+    
         super().__init__(name, age)
+        
         self.location = location
 
     def getLocation(self):
+    
         return self.location
 
 
 name = input("Enter Name: ")
+
 age = int(input("Enter Age: "))
+
 location = input("Enter Location: ")
 
 
 person = Grandchild(name, age, location)
 
 print("\nPerson Details")
+
 print("Name:", person.getName())
+
 print("Age:", person.getAge())
+
 print("Location:", person.getLocation())
-Add code here
+
 
 ## Sample Output
 Enter Name: John
+
 Enter Age: 28
+
 Enter Location: New York
 
 Person Details
+
 Name: John
+
 Age: 28
+
 Location: New York
